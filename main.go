@@ -1,6 +1,14 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/Eiliv17/HungryFoodEngine/initializers"
+	"github.com/gin-gonic/gin"
+)
+
+func init() {
+	initializers.LoadEnvVars()
+	initializers.LoadDatabase()
+}
 
 func main() {
 	r := gin.Default()
